@@ -11,5 +11,4 @@ class Solution:
             else:
                 j-=1
            
-        #print(m)
         return m
