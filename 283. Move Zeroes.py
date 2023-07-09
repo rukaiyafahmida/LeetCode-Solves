@@ -5,9 +5,9 @@ class Solution:
         """
         
         index=[]
-        n=len(nums)
+        length=len(nums)
         
-        for i in range(0,n):
+        for i in range(0,length):
             if(nums[i]==0):
                 index.append(i)
         x=0
