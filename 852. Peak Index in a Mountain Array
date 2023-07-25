@@ -1,0 +1,6 @@
+class Solution:
+    def peakIndexInMountainArray(self, arr: List[int]) -> int:
+        for i,(a,b,c) in enumerate(zip( arr,arr[1:], arr[2:])):
+            if a<b>c:
+                return i+1
+
