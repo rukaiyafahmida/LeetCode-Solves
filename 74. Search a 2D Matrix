@@ -1,0 +1,21 @@
+def binary_search(target, arr):
+    f= 0
+    b= len(arr)-1
+    while f<=b:
+        m = (f+b)//2
+        if target == arr[m]:
+            return m
+        elif target < arr[m]:
+            b=m-1
+        elif target > arr[m]:
+            f=m+1
+    return -2
+
+class Solution:
+    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
+        for row in matrix:
+            if row[0]<=target and row[-1]>=target:
+                result = binary_search(target=target, arr=row)
+                if result == -2:
+                    return False
+                return True
