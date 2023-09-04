@@ -1,0 +1,32 @@
+
+
+class Solution:
+    def str_to_num(self, s : str)-> int:
+        s = s[::-1]
+        output = 0
+        for i,char in enumerate(s):
+            output+=int(char)*(10**i)
+        return output
+    
+    def num_to_str(self, num : int)-> str:
+        if num == 0:
+            return "0"
+        output = ""
+        while num > 0:
+            digit = num % 10
+            output += chr(ord('0') + digit)
+            num //= 10 
+        return output[::-1]
+       
+    def addStrings(self, num1: str, num2: str) -> str:
+        if len(num1)< 4000:
+            n1 = int(num1)
+        else: 
+            n1 = self.str_to_num(s= num1)
+
+        if len(num2)< 4000:
+            n2 = int(num2)
+        else: 
+            n2 = self.str_to_num(s= num2)
+        return self.num_to_str(n1 + n2)
+
