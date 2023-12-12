@@ -1,0 +1,7 @@
+class Solution:
+        def transpose(self, matrix: List[List[int]]) -> List[List[int]]:
+            out = [[0 for i in range(len(matrix))] for j in range(len(matrix[0]))]
+            for i, row in enumerate(matrix):
+                for j, col in enumerate(row):
+                    out[j][i] = col
+            return out
