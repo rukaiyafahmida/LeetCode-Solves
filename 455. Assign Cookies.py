@@ -15,3 +15,22 @@ class Solution:
             else:
                 child -= 1
         return c
+
+
+
+class Solution:
+    def findContentChildren(self, g: List[int], s: List[int]) -> int:
+        s.sort()
+        g.sort()
+        c = 0
+        till = 0
+        tmp = 0
+        for x in g:
+            for i, y in enumerate(s[till:]):
+                if x <= y:
+                    c += 1
+                    tmp = i
+                    break
+                tmp = i
+            till += tmp + 1
+        return c
