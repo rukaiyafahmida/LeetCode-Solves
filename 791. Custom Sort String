@@ -1,0 +1,10 @@
+class Solution:
+    def customSortString(self, order: str, s: str) -> str:
+        rem = []
+        for x in order:
+            for y in s:
+                if x == y:
+                    rem.append(y)
+
+        diff = [x for x in s if x not in order]
+        return "".join(rem)+"".join(diff)
