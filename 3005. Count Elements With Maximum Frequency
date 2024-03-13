@@ -1,0 +1,11 @@
+class Solution:
+    def maxFrequencyElements(self, nums: List[int]) -> int:
+        c = Counter(nums)
+        items = list(c.items())
+        items.sort(reverse=True, key=lambda x: x[1])
+        maxm = items[0][1]
+        out = 0
+        for e, y in items:
+            if y == maxm:
+                out += y
+        return out
