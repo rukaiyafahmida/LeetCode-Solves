@@ -1,0 +1,16 @@
+class Solution:
+    def isIsomorphic(self, s: str, t: str) -> bool:
+        s_t_map = {}
+        taken = []
+        lent = len(s)
+        for i in range(lent):
+            st = s_t_map.get(s[i], None)
+            if st is None:
+                if t[i] in taken:
+                    return False
+                s_t_map[s[i]] = t[i]
+                taken.append(t[i])
+            else:
+                if st != t[i]:
+                    return False
+        return True
